@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MessageList from "./MessageList/index";
 import RoomList from "./RoomList/index";
+import TextArea from './TextArea';
 import { connect } from 'react-redux';
 
 let rooms = [
@@ -21,6 +22,9 @@ class Chat extends Component {
                     <h2> Messages for room %room% </h2>
                     <div className="message-pane">
                         <MessageList messages={this.props.messages}/>
+                    </div>
+                    <div className="compose-pane">
+                        <TextArea/>
                     </div>
                 </div>
             </div>
