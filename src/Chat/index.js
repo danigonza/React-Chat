@@ -3,8 +3,6 @@ import MessageList from "./MessageList/index";
 import RoomList from "./RoomList/index";
 import { connect } from 'react-redux';
 
-let messages = [];
-
 let rooms = [
     { id: 1, name: 'Room 1' },
     { id: 2, name: 'Room 2' },

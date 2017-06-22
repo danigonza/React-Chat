@@ -1,7 +1,7 @@
 import { applyMiddleware, createStore } from 'redux'
 import { createLogger } from 'redux-logger';
+import messageReducer, { addMessage } from './reducers/messageReducer';
 
-const ADD = 'chat/message/ADD';
 const logger = createLogger();
 
 let messages = [
@@ -10,26 +10,10 @@ let messages = [
     { id: 3, room_id: 1, body: 'Bien', from_id: 1 }
 ];
 
-function messageReducer(state = {byId: []}, action){
-    switch(action.type){
-        case ADD:
-            return {
-                ...state,
-                byId: {
-                    ...state.byId,
-                    [action.message.id]: action.message
-                }
-            };
-
-        default:
-            return state;
-    }
-}
-
 const store = createStore(messageReducer, applyMiddleware(logger));
 
 messages.forEach( (message, index) =>
-    setTimeout((() => store.dispatch({type: ADD, message})), 1000 * index)
+    setTimeout((() => store.dispatch(addMessage(message))), 1000 * index)
 );
 
 export default store;
