@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Chat from './Chat/.';
+import { Provider } from 'react-redux';
+import state from './lib/state';
+
 
 class App extends Component {
   render() {
     return (
-        <Chat/>
+        <Provider store={state}>
+          <Chat/>
+        </Provider>
     );
   }
 }

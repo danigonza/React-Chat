@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import MessageList from "./MessageList/index";
 import RoomList from "./RoomList/index";
+import { connect } from 'react-redux';
 
-let messages = [
-    { id: 1, room_id: 1, body: 'Uola', from_id: 1 },
-    { id: 2, room_id: 1, body: 'Q tal', from_id: 2 },
-    { id: 3, room_id: 1, body: 'Bien', from_id: 1 }
-];
+let messages = [];
 
 let rooms = [
     { id: 1, name: 'Room 1' },
@@ -25,12 +22,18 @@ class Chat extends Component {
                 <div className="right-pane">
                     <h2> Messages for room %room% </h2>
                     <div className="message-pane">
-                        <MessageList messages={messages}/>
+                        <MessageList messages={this.props.messages}/>
                     </div>
                 </div>
             </div>
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return { messages: Object.values(state.byId) }
+};
+
+Chat = connect(mapStateToProps)(Chat);
 
 export default Chat;
