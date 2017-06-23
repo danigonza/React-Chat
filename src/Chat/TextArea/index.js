@@ -22,7 +22,7 @@ class TextArea extends Component {
     }
 
     render() {
-        return <textarea id="" name="" cols="30" rows="10" value={this.state.text} onInput={this.onInput} onKeyDown={this.onKeyDown}></textarea>
+        return <textarea id="" name="" cols="30" rows="10" placeholder="Type here!" value={this.state.text} onInput={this.onInput} onKeyDown={this.onKeyDown}></textarea>
     }
 }
 

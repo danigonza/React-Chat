@@ -4,15 +4,13 @@ import Message from "./Message";
 class MessageList extends Component {
     render() {
         return (
-            <div className="message-list">
-                <ul>
-                    {
-                        this.props.messages.map ((message) =>
-                            <Message key={message.id} message={message}/>
-                        )
-                    }
-                </ul>
-            </div>
+            <ul className="message-list">
+                {
+                    this.props.messages.map ((message) =>
+                        <Message key={message.id} message={message}/>
+                    )
+                }
+            </ul>
         );
     }
 }

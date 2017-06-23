@@ -9,11 +9,16 @@ class Chat extends Component {
         return (
             <div className="chat">
                 <div className="left-pane">
-                    <h2> Rooms </h2>
+                    <div className="menu">
+                        <div className="room-title"> Rooms </div>
+                    </div>
                     <RoomList rooms={this.props.rooms}/>
                 </div>
                 <div className="right-pane">
-                    <h2> Messages for room %room% </h2>
+                    <div className="menu">
+                        <div className="back"><i className="fa fa-chevron-left"></i></div>
+                        <div className="room-title">Messages for room %room%</div>
+                    </div>
                     <div className="message-pane">
                         <MessageList messages={this.props.messages}/>
                     </div>
