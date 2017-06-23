@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import store from '../../lib/store';
 import { addMessage } from '../../lib/reducers/messageReducer';
-
+import { connect } from 'react-redux';
 
 class TextArea extends Component {
     constructor(props) {
@@ -17,7 +16,7 @@ class TextArea extends Component {
 
     onKeyDown(event) {
         if(event.keyCode === 13){
-            store.dispatch(addMessage({ id: Date.now(), room_id: 1, body: event.target.value, from_id: 1 }));
+            this.props.addMessage({ id: Date.now(), room_id: 1, body: event.target.value, from_id: 1 });
             this.setState({ text: '' })
         }
     }
@@ -26,5 +25,7 @@ class TextArea extends Component {
         return <textarea id="" name="" cols="30" rows="10" value={this.state.text} onInput={this.onInput} onKeyDown={this.onKeyDown}></textarea>
     }
 }
+
+TextArea = connect(null, { addMessage })(TextArea);
 
 export default TextArea;
