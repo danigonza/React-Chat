@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<textarea
+  cols="30"
+  id=""
+  name=""
+  onInput={[Function]}
+  onKeyDown={[Function]}
+  rows="10"
+  value=""
+/>
+`;

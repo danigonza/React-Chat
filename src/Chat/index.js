@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MessageList from "./MessageList/index";
 import RoomList from "./RoomList/index";
-import TextArea from './TextArea';
+import TextArea from './TextArea/index';
 import { connect } from 'react-redux';
 
 let rooms = [
