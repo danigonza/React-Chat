@@ -1,4 +1,4 @@
-const ADD = 'chat/message/ADD';
+const ADD = 'chat/room/ADD';
 const DELETE = 'chat/room/DELETE';
 
 export const addRoom  = (room) => ({type: ADD, room});
