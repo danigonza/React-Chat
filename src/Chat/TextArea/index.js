@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import store from '../../lib/state';
+import store from '../../lib/store';
 import { addMessage } from '../../lib/reducers/messageReducer';
 
 

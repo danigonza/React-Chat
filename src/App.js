@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import Chat from './Chat/.';
 import { Provider } from 'react-redux';
-import state from './lib/state';
+import store from './lib/store';
 
 
 class App extends Component {
   render() {
     return (
-        <Provider store={state}>
+        <Provider store={store}>
           <Chat/>
         </Provider>
     );
