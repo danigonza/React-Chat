@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addMessage } from '../../lib/reducers/messageReducer';
+import { addMessage, addMessageWithEcho } from '../../lib/reducers/messageReducer';
 import { connect } from 'react-redux';
 
 class TextArea extends Component {
@@ -16,7 +16,7 @@ class TextArea extends Component {
 
     onKeyDown(event) {
         if(event.keyCode === 13){
-            this.props.addMessage({ id: Date.now(), room_id: 1, body: event.target.value, from_id: 1 });
+            this.props.addMessageWithEcho({ id: Date.now(), room_id: 1, body: event.target.value, from_id: 1 });
             this.setState({ text: '' })
         }
     }
@@ -26,6 +26,6 @@ class TextArea extends Component {
     }
 }
 
-TextArea = connect(null, { addMessage })(TextArea);
+TextArea = connect(null, { addMessage, addMessageWithEcho })(TextArea);
 
 export default TextArea;
