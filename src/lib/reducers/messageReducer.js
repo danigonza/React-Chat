@@ -12,11 +12,23 @@ export const addMessageWithEcho = (message) =>
 function onAddMessage (state, message) {
   return {
     ...state,
-    byId: { ...state.byId, [message.id]: message }
+    byId: {
+      ...state.byId,
+      [message.id]: message
+    },
+    byRoomId: {
+      ...state.byRoomId,
+      [message.room_id]: {
+        byId: {
+          ...state.byRoomId[message.room_id].byId,
+          [message.id]: state.byId[message.id]
+        }
+      }
+    }
   }
 }
 
-export default function messageReducer (state = {byId: []}, action) {
+export default function messageReducer (state = {byId: [], byRoomId: []}, action) {
   switch (action.type) {
     case ADD:
       return onAddMessage(state, action.message)

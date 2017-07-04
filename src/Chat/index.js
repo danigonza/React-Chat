@@ -21,8 +21,8 @@ class Chat extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { messages: Object.values(state.messages.byId), rooms: Object.values(state.rooms.byId) }
+const mapStateToProps = (state, ownProps) => {
+  return { messages: Object.values(state.messages.byRoomId[ownProps.params.roomId].byId), rooms: Object.values(state.rooms.byId) }
 }
 
 const chat = connect(mapStateToProps)(Chat)
