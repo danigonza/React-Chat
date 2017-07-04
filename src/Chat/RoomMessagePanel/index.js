@@ -7,7 +7,7 @@ class RoomMessagePanel extends Component {
     return (
       <div className='right-pane'>
         <div className='menu'>
-          <div className='back'><i className='fa fa-chevron-left' /></div>
+          <div className='back'><i className='material-icons'>keyboard_arrow_left</i></div>
           <div className='room-title'>Messages for room %room%</div>
         </div>
         <div className='message-pane'>
