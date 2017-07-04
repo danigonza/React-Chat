@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addMessage, addMessageWithEcho } from '../../lib/reducers/messageReducer'
+import { addMessage, addMessageWithEcho } from '../../../lib/reducers/messageReducer'
 import { connect } from 'react-redux'
 
 class TextArea extends Component {

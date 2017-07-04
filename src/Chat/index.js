@@ -1,26 +1,14 @@
 import React, { Component } from 'react'
-import MessageList from './MessageList/index'
 import Sidebar from './Sidebar/index'
-import TextArea from './TextArea/index'
 import { connect } from 'react-redux'
+import RoomMessagePanel from './RoomMessagePanel/index'
 
 class Chat extends Component {
   render () {
     return (
       <div className='chat'>
         <Sidebar rooms={this.props.rooms} />
-        <div className='right-pane'>
-          <div className='menu'>
-            <div className='back'><i className='fa fa-chevron-left' /></div>
-            <div className='room-title'>Messages for room %room%</div>
-          </div>
-          <div className='message-pane'>
-            <MessageList messages={this.props.messages} />
-          </div>
-          <div className='compose-pane'>
-            <TextArea />
-          </div>
-        </div>
+        <RoomMessagePanel messages={this.props.messages} />
       </div>
     )
   }
