@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MessageList from './MessageList/index'
-import RoomList from './RoomList/index'
+import Sidebar from './Sidebar/index'
 import TextArea from './TextArea/index'
 import { connect } from 'react-redux'
 
@@ -8,12 +8,7 @@ class Chat extends Component {
   render () {
     return (
       <div className='chat'>
-        <div className='left-pane'>
-          <div className='menu'>
-            <div className='room-title'> Rooms </div>
-          </div>
-          <RoomList rooms={this.props.rooms} />
-        </div>
+        <Sidebar rooms={this.props.rooms} />
         <div className='right-pane'>
           <div className='menu'>
             <div className='back'><i className='fa fa-chevron-left' /></div>

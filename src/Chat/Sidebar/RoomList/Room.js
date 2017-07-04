@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { deleteRoom } from '../../lib/reducers/roomReducer'
+import { deleteRoom } from '../../../lib/reducers/roomReducer'
 import { connect } from 'react-redux'
 
 class Room extends Component {
@@ -11,7 +11,9 @@ class Room extends Component {
     return (
       <li className='room'>
         <span>{this.props.room.name}</span>
-        <button onClick={this.onClick}> Remove room </button>
+        <div className='delete-room-button ' onClick={this.onClick}>
+          <i className='material-icons'>delete</i>
+        </div>
       </li>
     )
   }

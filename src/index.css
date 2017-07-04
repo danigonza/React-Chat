@@ -123,6 +123,16 @@ a{
   cursor: default;
 }
 
+.delete-room-button {
+  float: right;
+}
+
+.add-room-button {
+  float: right;
+  margin: 15px;
+  color: rgba(255,255,255,0.98);
+}
+
 /* M E S S A G E S */
 
 .message-list {
