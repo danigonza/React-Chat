@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Sidebar from './Sidebar/index'
 import { connect } from 'react-redux'
+import RoomMessagePanel from './RoomMessagePanel/index'
 import Home from './Home'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
@@ -11,6 +12,9 @@ class Chat extends Component {
         <div className='chat'>
           <Sidebar rooms={this.props.rooms} />
           <Route exact path='/' component={Home} />
+          <Route path='/room/:roomId' render={({match}) => (
+            <RoomMessagePanel roomId={match.params.roomId} messages={this.props.messages} />
+          )} />
         </div>
       </Router>
     )
